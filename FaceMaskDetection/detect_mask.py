@@ -12,13 +12,13 @@ import os
 from pygame import mixer
 
 
-def detect_mask(frame, faceNet, maskNet):
+def detect_mask(frame, faceDet, maskNet):
     (h, w) = frame.shape[:2]
     blob = cv2.dnn.blobFromImage(frame, 1.0, (224, 224),
                                  (104.0, 177.0, 123.0))
 
-    faceNet.setInput(blob)
-    detections = faceNet.forward()
+    faceDet.setInput(blob)
+    detections = faceDet.forward()
     print(detections.shape)
 
     faces = []
@@ -56,7 +56,7 @@ def detect_mask(frame, faceNet, maskNet):
 #https://github.com/pourabkarchaudhuri/face-detection/tree/master/caffe
 prototxtPath = r"deploy.protext"
 weightsPath = r"res10_300x300_ssd_iter_140000.caffemodel"
-faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
+faceDet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
 # load the face mask detector model from disk
 maskNet = load_model("mask_detector.model")
@@ -71,7 +71,7 @@ while True:
     frame = vs.read()
     frame = imutils.resize(frame, width=400)
 
-    (locs, preds) = detect_mask(frame, faceNet, maskNet)
+    (locs, preds) = detect_mask(frame, faceDet, maskNet)
 
     for (box, pred) in zip(locs, preds):
         # unpack the bounding box and predictions
