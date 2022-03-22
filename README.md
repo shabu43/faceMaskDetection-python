@@ -1,6 +1,6 @@
 # faceMaskDetection-python
  
-packages required to install:
+packages required:
 
 
 pip install --upgrade tensorflow 
