@@ -4,7 +4,7 @@
 - Relay announcement (Audio warning) to mandate mask in COVID pandemic situation at public area.
 
 
-#Technology used
+## Technology used
 Python, Tensorflow, Opencv, Git
 
 
