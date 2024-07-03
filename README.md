@@ -1,4 +1,14 @@
 # faceMaskDetection-python
+
+- Data mined over thousand of images and performed classification (NN) to detect face without mask
+- Relay announcement to mandate mask in COVID pandemic situation at public area.
+
+# Audio warning based on the prediction from real time video 
+
+#Technology used
+Python, Tensorflow, Opencv, Git
+
+
  
 packages required:
 
