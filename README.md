@@ -88,10 +88,6 @@ The detection script utilizes OpenCV for real-time video processing. It captures
 
 If an individual is detected without a mask, an audio alert is played. Ensure you have an audio file named `Recording.mp3` in the same directory.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more information.
-
 ## Acknowledgments
 
 - The dataset can be sourced from various public repositories or created by collecting images in the specified format.
